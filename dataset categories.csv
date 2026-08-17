@@ -1,0 +1,2 @@
+Dataset,Categories,Size,Format,Source
+"TrashNet (Stanford CS229)","Glass, Paper, Cardboard, Plastic, Metal, Trash",~2,527 images,"JPG, 512×384",GitHub - garythung/trashnet
