@@ -1,58 +1,38 @@
 Smart Waste Management System
+=============================
 
-Overview:-
-This project is a Flask-based web application that classifies waste images into categories (Plastic, Paper, Cardboard, Glass, Metal, Trash) and provides disposal suggestions. It also logs waste fill levels and uses regression to forecast bin capacity.
+1. Overview
+   This project is a Flask-based web application that classifies waste images into six categories: Plastic, Paper, Cardboard, Glass, Metal, and Trash. It provides disposal suggestions, logs bin fill levels, and uses regression analysis to forecast future capacity.
 
-Project Structure:-
-smart-waste-management
-│
-├── App.py                   -> Flask web app
-├── dataset categories.csv   -> Info file describing TrashNet dataset
-├── waste_history.csv        -> Auto-generated log of bin fill levels
-├── static/                  -> Stores generated charts
-├── templates/
-│   └── index.html           -> Web interface template
+2. Project Structure
+   1. App.py
+   2. dataset categories.csv
+   3. waste_history.csv
+   4. static/
+   5. templates/
+      - index.html
 
-Requirements:-
-1.Install dependencies in VS Code terminal:
-  pip install flask opencv-python scikit-learn matplotlib pandas
-2.How to Run
-  Start the Flask app:
-   python App.py
-3.Open in browser:
-   http://127.0.0.1:8080 (127.0.0.1 in Bing)
-4.Upload an image:
-  > Choose a file (e.g., plastic bottle, newspaper, glass jar).
-      > The app will classify it and suggest disposal instructions.
-5.View dashboard:
-  The app generates a chart (static/dashboard_chart.png) showing bin capacity forecasts
-6.Waste logs are stored in waste_history.csv.
+3. Requirements
+   Install the following dependencies in VS Code terminal:
+   pip install flask opencv-python scikit-learn matplotlib pandas
 
-Features:-
- Waste Classification:
- Uses filename metadata + KMeans clustering on image pixels.
- Categories: Plastic, Paper, Cardboard, Glass, Metal, Trash.
- 
- Disposal Suggestions:
-Plastic   -> Recycle in plastic bin
-Paper     -> Recycle in paper bin
-Cardboard -> Recycle in cardboard bin
-Glass     -> Recycle in glass bin
-Metal     -> Recycle in metal bin
-Trash     -> Landfill / General Waste
+4. How to Run
+   1. Start the Flask app:
+      python App.py
+   2. Open your browser and go to:
+      http://127.0.0.1:8080
+   3. Upload an image (e.g., plastic bottle, newspaper, glass jar).
+   4. The app will classify the image and suggest disposal instructions.
+   5. View the dashboard:
+      - Chart (static/dashboard_chart.png) shows bin capacity forecasts.
+      - Logs are stored in waste_history.csv.
 
-Smart Bin Forecasting:
-Logs fill levels in waste_history.csv.
-Linear regression predicts future capacity.
-Alerts when bins exceed 85% capacity (“DISPATCH TRUCK”).
-
-Example Workflow
-Upload plastic_bottle.jpg
-App classifies -> Plastic
-Suggests -> "Recycle in plastic bin"
-Updates waste_history.csv with new fill level
-Dashboard chart updates with forecast
-
-.
-
-Logs auto-reset if you press "Reset Database" on the web page.
+5. Features
+   1. Waste Classification: Uses filename metadata and KMeans clustering on image pixels.
+   2. Disposal Suggestions:
+      - Plastic → Recycle in plastic bin
+      - Paper → Recycle in paper bin
+      - Cardboard → Recycle in cardboard bin
+      - Glass → Recycle in glass bin
+      - Metal → Recycle in metal bin
+      - Trash
