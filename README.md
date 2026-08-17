@@ -1,5 +1,4 @@
-Smart Waste Management System
-=============================
+Smart Waste Management System:-
 
 1. Overview
    This project is a Flask-based web application that classifies waste images into six categories: Plastic, Paper, Cardboard, Glass, Metal, and Trash. It provides disposal suggestions, logs bin fill levels, and uses regression analysis to forecast future capacity.
@@ -35,4 +34,16 @@ Smart Waste Management System
       - Cardboard → Recycle in cardboard bin
       - Glass → Recycle in glass bin
       - Metal → Recycle in metal bin
-      - Trash
+      - Trash → Landfill / General Waste
+   3. Smart Bin Forecasting:
+      - Tracks fill levels in waste_history.csv.
+      - Linear regression predicts future capacity.
+      - Alerts when bins exceed 85% capacity (“DISPATCH TRUCK”).
+
+6. Example Workflow
+   1. Upload plastic_bottle.jpg
+   2. App classifies → Plastic
+   3. Suggests → "Recycle in plastic bin"
+   4. Updates waste_history.csv with new fill level
+   5. Dashboard chart updates with forecast
+
